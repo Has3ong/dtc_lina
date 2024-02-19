@@ -20,3 +20,5 @@ export NODE_OPTIONS=--openssl-legacy-provider
 
 cd infra
 docker-compose up
+
+pip install httpie
