@@ -36,37 +36,37 @@
                 <v-list>
                     <v-list-item
                         class="px-2"
-                        key="보험"
-                        to="/보험/보험"
+                        key="insurances"
+                        to="/insurances/insurances"
                         @click="changeUrl()"
                         color="primary"
                         style="font-weight:700;"
                     >
-                        보험
+                        Insurance
                     </v-list-item>
 
 
                     <v-list-item
                         class="px-2"
-                        key="회원"
-                        to="/회원/회원"
+                        key="members"
+                        to="/members/members"
                         @click="changeUrl()"
                         color="primary"
                         style="font-weight:700;"
                     >
-                        회원
+                        Member
                     </v-list-item>
 
 
                     <v-list-item
                         class="px-2"
-                        key="심사"
-                        to="/심사/심사"
+                        key="reviews"
+                        to="/reviews/reviews"
                         @click="changeUrl()"
                         color="primary"
                         style="font-weight:700;"
                     >
-                        심사
+                        Review
                     </v-list-item>
 
 
@@ -149,24 +149,24 @@ export default {
         ImageUrl: '',
         aggregate: [
             { 
-                title: '보험', 
+                title: 'Insurance', 
                 description: '', 
-                key: '보험', 
-                route: '/보험/보험',
+                key: 'insurances', 
+                route: '/insurances/insurances',
                 ImageUrl: '',
             },
             { 
-                title: '회원', 
+                title: 'Member', 
                 description: '', 
-                key: '회원', 
-                route: '/회원/회원',
+                key: 'members', 
+                route: '/members/members',
                 ImageUrl: '',
             },
             { 
-                title: '심사', 
+                title: 'Review', 
                 description: '', 
-                key: '심사', 
-                route: '/심사/심사',
+                key: 'reviews', 
+                route: '/reviews/reviews',
                 ImageUrl: '',
             },
             

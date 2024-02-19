@@ -5,14 +5,14 @@ import Router from 'vue-router'
 Vue.use(Router);
 
 
-import 보험보험Manager from "./components/listers/보험보험Cards"
-import 보험보험Detail from "./components/listers/보험보험Detail"
+import InsuranceInsuranceManager from "./components/listers/InsuranceInsuranceCards"
+import InsuranceInsuranceDetail from "./components/listers/InsuranceInsuranceDetail"
 
-import 회원회원Manager from "./components/listers/회원회원Cards"
-import 회원회원Detail from "./components/listers/회원회원Detail"
+import MemberMemberManager from "./components/listers/MemberMemberCards"
+import MemberMemberDetail from "./components/listers/MemberMemberDetail"
 
-import 심사심사Manager from "./components/listers/심사심사Cards"
-import 심사심사Detail from "./components/listers/심사심사Detail"
+import ReviewReviewManager from "./components/listers/ReviewReviewCards"
+import ReviewReviewDetail from "./components/listers/ReviewReviewDetail"
 
 
 export default new Router({
@@ -20,36 +20,36 @@ export default new Router({
     base: process.env.BASE_URL,
     routes: [
             {
-                path: '/보험/보험',
-                name: '보험보험Manager',
-                component: 보험보험Manager
+                path: '/insurances/insurances',
+                name: 'InsuranceInsuranceManager',
+                component: InsuranceInsuranceManager
             },
             {
-                path: '/보험/보험/:id',
-                name: '보험보험Detail',
-                component: 보험보험Detail
-            },
-
-            {
-                path: '/회원/회원',
-                name: '회원회원Manager',
-                component: 회원회원Manager
-            },
-            {
-                path: '/회원/회원/:id',
-                name: '회원회원Detail',
-                component: 회원회원Detail
+                path: '/insurances/insurances/:id',
+                name: 'InsuranceInsuranceDetail',
+                component: InsuranceInsuranceDetail
             },
 
             {
-                path: '/심사/심사',
-                name: '심사심사Manager',
-                component: 심사심사Manager
+                path: '/members/members',
+                name: 'MemberMemberManager',
+                component: MemberMemberManager
             },
             {
-                path: '/심사/심사/:id',
-                name: '심사심사Detail',
-                component: 심사심사Detail
+                path: '/members/members/:id',
+                name: 'MemberMemberDetail',
+                component: MemberMemberDetail
+            },
+
+            {
+                path: '/reviews/reviews',
+                name: 'ReviewReviewManager',
+                component: ReviewReviewManager
+            },
+            {
+                path: '/reviews/reviews/:id',
+                name: 'ReviewReviewDetail',
+                component: ReviewReviewDetail
             },
 
 

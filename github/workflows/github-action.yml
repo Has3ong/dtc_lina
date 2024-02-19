@@ -29,37 +29,37 @@ jobs:
       
       - name: Build Maven Projects
         run: |
-          mvn clean package -f ./보험/pom.xml
-          mvn clean package -f ./회원/pom.xml
-          mvn clean package -f ./심사/pom.xml
+          mvn clean package -f ./Insurance/pom.xml
+          mvn clean package -f ./Member/pom.xml
+          mvn clean package -f ./Review/pom.xml
 
-      - name: Docker Build and push for 보험
+      - name: Docker Build and push for Insurance
         uses: docker/build-push-action@v4
         with:
-          context: ./보험
+          context: ./Insurance
           platforms: linux/amd64,linux/arm64
           push: true
           tags: |
-            ghcr.io/${{ github.repository }}/보험:latest
-            ghcr.io/${{ github.repository }}/보험:${{ github.ref_name }}
+            ghcr.io/${{ github.repository }}/insurance:latest
+            ghcr.io/${{ github.repository }}/insurance:${{ github.ref_name }}
             
-      - name: Docker Build and push for 회원
+      - name: Docker Build and push for Member
         uses: docker/build-push-action@v4
         with:
-          context: ./회원
+          context: ./Member
           platforms: linux/amd64,linux/arm64
           push: true
           tags: |
-            ghcr.io/${{ github.repository }}/회원:latest
-            ghcr.io/${{ github.repository }}/회원:${{ github.ref_name }}
+            ghcr.io/${{ github.repository }}/member:latest
+            ghcr.io/${{ github.repository }}/member:${{ github.ref_name }}
             
-      - name: Docker Build and push for 심사
+      - name: Docker Build and push for Review
         uses: docker/build-push-action@v4
         with:
-          context: ./심사
+          context: ./Review
           platforms: linux/amd64,linux/arm64
           push: true
           tags: |
-            ghcr.io/${{ github.repository }}/심사:latest
-            ghcr.io/${{ github.repository }}/심사:${{ github.ref_name }}
+            ghcr.io/${{ github.repository }}/review:latest
+            ghcr.io/${{ github.repository }}/review:${{ github.ref_name }}
             

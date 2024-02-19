@@ -45,11 +45,11 @@ templateFiles.keys().forEach(function(tempFiles) {
 Vue.use(Managing);
 const pluralCaseList = []
 
-pluralCaseList.push( {plural: "보험/보험", pascal: "보험보험"} )
+pluralCaseList.push( {plural: "insurances/insurances", pascal: "InsuranceInsurance"} )
 
-pluralCaseList.push( {plural: "회원/회원", pascal: "회원회원"} )
+pluralCaseList.push( {plural: "members/members", pascal: "MemberMember"} )
 
-pluralCaseList.push( {plural: "심사/심사", pascal: "심사심사"} )
+pluralCaseList.push( {plural: "reviews/reviews", pascal: "ReviewReview"} )
 
 
 Vue.prototype.$ManagerLists.forEach(function(item, idx) {

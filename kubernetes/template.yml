@@ -3,22 +3,22 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: 보험
+  name: Insurance
   labels:
-    app: 보험
+    app: Insurance
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: 보험
+      app: Insurance
   template:
     metadata:
       labels:
-        app: 보험
+        app: Insurance
     spec:
       containers:
-        - name: 보험
-          image: username/보험:latest
+        - name: Insurance
+          image: username/Insurance:latest
           ports:
             - containerPort: 8080
           readinessProbe:
@@ -43,22 +43,22 @@ spec:
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: 회원
+  name: Member
   labels:
-    app: 회원
+    app: Member
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: 회원
+      app: Member
   template:
     metadata:
       labels:
-        app: 회원
+        app: Member
     spec:
       containers:
-        - name: 회원
-          image: username/회원:latest
+        - name: Member
+          image: username/Member:latest
           ports:
             - containerPort: 8080
           readinessProbe:
@@ -83,22 +83,22 @@ spec:
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: 심사
+  name: Review
   labels:
-    app: 심사
+    app: Review
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: 심사
+      app: Review
   template:
     metadata:
       labels:
-        app: 심사
+        app: Review
     spec:
       containers:
-        - name: 심사
-          image: username/심사:latest
+        - name: Review
+          image: username/Review:latest
           ports:
             - containerPort: 8080
           readinessProbe:
@@ -125,15 +125,15 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: 보험
+  name: Insurance
   labels:
-    app: 보험
+    app: Insurance
 spec:
   ports:
     - port: 8080
       targetPort: 8080
   selector:
-    app: 보험
+    app: Insurance
 
 
 ---
@@ -142,15 +142,15 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: 회원
+  name: Member
   labels:
-    app: 회원
+    app: Member
 spec:
   ports:
     - port: 8080
       targetPort: 8080
   selector:
-    app: 회원
+    app: Member
 
 
 ---
@@ -159,13 +159,13 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: 심사
+  name: Review
   labels:
-    app: 심사
+    app: Review
 spec:
   ports:
     - port: 8080
       targetPort: 8080
   selector:
-    app: 심사
+    app: Review
 

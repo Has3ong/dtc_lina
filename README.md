@@ -20,9 +20,9 @@ cd /bin
 ## Run the backend micro-services
 See the README.md files inside the each microservices directory:
 
-- 보험
-- 회원
-- 심사
+- Insurance
+- Member
+- Review
 
 
 ## Run API Gateway (Spring Gateway)
@@ -32,17 +32,17 @@ mvn spring-boot:run
 ```
 
 ## Test by API
-- 보험
+- Insurance
 ```
- http :8088/보험 id="id" prdNm="prdNm" usrId="usrId" 
+ http :8088/insurances id="id" prdNm="prdNm" usrId="usrId" 
 ```
-- 회원
+- Member
 ```
- http :8088/회원 id="id" usrId="usrId" usrNm="usrNm" prdId="prdId" prdStatus="prdStatus" prdNm="prdNm" 
+ http :8088/members id="id" usrId="usrId" usrNm="usrNm" prdId="prdId" prdStatus="prdStatus" prdNm="prdNm" 
 ```
-- 심사
+- Review
 ```
- http :8088/심사 id="id" prdId="prdId" usrId="usrId" prdStatus="prdStatus" prdNm="prdNm" 
+ http :8088/reviews id="id" prdId="prdId" usrId="usrId" prdStatus="prdStatus" prdNm="prdNm" 
 ```
 
 
