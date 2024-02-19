@@ -1,0 +1,76 @@
+server:
+  port: 8088
+
+---
+
+spring:
+  profiles: default
+  cloud:
+    gateway:
+#<<< API Gateway / Routes
+      routes:
+        - id: 보험
+          uri: http://localhost:8082
+          predicates:
+            - Path=/보험/**, 
+        - id: 회원
+          uri: http://localhost:8083
+          predicates:
+            - Path=/회원/**, 
+        - id: 심사
+          uri: http://localhost:8084
+          predicates:
+            - Path=/심사/**, 
+        - id: frontend
+          uri: http://localhost:8080
+          predicates:
+            - Path=/**
+#>>> API Gateway / Routes
+      globalcors:
+        corsConfigurations:
+          '[/**]':
+            allowedOrigins:
+              - "*"
+            allowedMethods:
+              - "*"
+            allowedHeaders:
+              - "*"
+            allowCredentials: true
+
+
+---
+
+spring:
+  profiles: docker
+  cloud:
+    gateway:
+      routes:
+        - id: 보험
+          uri: http://보험:8080
+          predicates:
+            - Path=/보험/**, 
+        - id: 회원
+          uri: http://회원:8080
+          predicates:
+            - Path=/회원/**, 
+        - id: 심사
+          uri: http://심사:8080
+          predicates:
+            - Path=/심사/**, 
+        - id: frontend
+          uri: http://frontend:8080
+          predicates:
+            - Path=/**
+      globalcors:
+        corsConfigurations:
+          '[/**]':
+            allowedOrigins:
+              - "*"
+            allowedMethods:
+              - "*"
+            allowedHeaders:
+              - "*"
+            allowCredentials: true
+
+server:
+  port: 8080
