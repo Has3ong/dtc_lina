@@ -1,5 +1,5 @@
 server:
-  port: 8088
+  port: 8080
 
 ---
 
@@ -21,10 +21,10 @@ spring:
           uri: http://localhost:8084
           predicates:
             - Path=/reviews/**, 
-        - id: frontend
-          uri: http://localhost:8080
-          predicates:
-            - Path=/**
+#        - id: frontend
+#          uri: http://localhost:8080
+#          predicates:
+#            - Path=/**
 #>>> API Gateway / Routes
       globalcors:
         corsConfigurations:
