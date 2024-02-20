@@ -16,8 +16,9 @@
         </v-card-title >        
 
         <v-card-text>
-            <String label="PrdNm" v-model="value.prdNm" :editMode="editMode" :inputUI="''"/>
+            <Number v-if="editMode" label="InsuranceId" v-model="value.insuranceId" :editMode="editMode" :inputUI="''"/>
             <Number label="UsrId" v-model="value.usrId" :editMode="editMode" :inputUI="''"/>
+            <Number label="PrdId" v-model="value.prdId" :editMode="editMode" :inputUI="''"/>
         </v-card-text>
 
         <v-card-actions>

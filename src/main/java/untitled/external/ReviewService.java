@@ -16,8 +16,8 @@ public interface ReviewService {
     public void insuranceReview(@RequestBody Review review);
 
     @RequestMapping(method = RequestMethod.PATCH, path = "/reviews")
-    public void subscriptionStatusChangeByReviewer(@RequestBody Review review);
+    public void subscriptionStatusChange(@RequestBody Review review);
 
     @RequestMapping(method = RequestMethod.PATCH, path = "/reviews")
-    public void subscriptionStatusChangeByReviewer(@RequestBody Review review);
+    public void subscriptionStatusChange(@RequestBody Review review);
 }

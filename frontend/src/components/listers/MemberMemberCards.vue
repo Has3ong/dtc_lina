@@ -109,6 +109,7 @@
             me.values = temp.data._embedded.members;
             
             me.newValue = {
+                'insuranceId': 0,
                 'usrId': 0,
                 'usrNm': '',
                 'prdId': 0,

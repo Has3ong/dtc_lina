@@ -11,10 +11,9 @@ import untitled.infra.AbstractEvent;
 @ToString
 public class SubscriptionCanceled extends AbstractEvent {
 
-    private Long id;
-    private Long usrId;
-    private Long prdId;
+    private Long insuranceId;
     private String prdStatus;
+    private String prdNm;
 
     public SubscriptionCanceled(Member aggregate) {
         super(aggregate);

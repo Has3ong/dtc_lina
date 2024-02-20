@@ -15,10 +15,13 @@
                             <v-list-item-title>
                             </v-list-item-title>
                             <v-list-item-subtitle>
-                                PrdNm :  {{item.prdNm }}
+                                InsuranceId :  {{item.insuranceId }}
                             </v-list-item-subtitle>
                             <v-list-item-subtitle>
                                 UsrId :  {{item.usrId }}
+                            </v-list-item-subtitle>
+                            <v-list-item-subtitle>
+                                PrdId :  {{item.prdId }}
                             </v-list-item-subtitle>
                         </v-list-item-content>
 
@@ -70,7 +73,7 @@
                 var obj = {}
                 if(val != undefined) {
                     var arr = this.list[val]._links.self.href.split('/');
-                    obj['id'] = arr[4]; 
+                    obj['insuranceId'] = arr[4]; 
                     
                     
                     

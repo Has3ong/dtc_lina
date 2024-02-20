@@ -1,5 +1,5 @@
 server:
-  port: 8080
+  port: 8088
 
 ---
 
@@ -24,7 +24,11 @@ spring:
         - id: Notification
           uri: http://localhost:8085
           predicates:
-            - Path=/undefined/**, 
+            - Path=/notifications/**, 
+        - id: MyPage
+          uri: http://localhost:8086
+          predicates:
+            - Path=, 
         - id: frontend
           uri: http://localhost:8080
           predicates:
@@ -64,7 +68,11 @@ spring:
         - id: Notification
           uri: http://notification:8080
           predicates:
-            - Path=/undefined/**, 
+            - Path=/notifications/**, 
+        - id: MyPage
+          uri: http://myPage:8080
+          predicates:
+            - Path=, 
         - id: frontend
           uri: http://frontend:8080
           predicates:

@@ -16,6 +16,7 @@
         </v-card-title >        
 
         <v-card-text>
+            <Number v-if="editMode" label="InsuranceId" v-model="value.insuranceId" :editMode="editMode" :inputUI="''"/>
             <Number label="PrdId" v-model="value.prdId" :editMode="editMode" :inputUI="''"/>
             <Number label="UsrId" v-model="value.usrId" :editMode="editMode" :inputUI="''"/>
             <String label="PrdStatus" v-model="value.prdStatus" :editMode="editMode" :inputUI="''"/>
@@ -45,7 +46,7 @@
                     text
                     @click="save"
                 >
-                    SubscriptionStatusChangeByReviewer
+                    SubscriptionStatusChange
                 </v-btn>
                 <v-btn
                     color="primary"

@@ -5,9 +5,6 @@ import org.springframework.data.repository.PagingAndSortingRepository;
 import org.springframework.data.rest.core.annotation.RepositoryRestResource;
 import untitled.domain.*;
 
-@RepositoryRestResource(
-    collectionResourceRel = "getInsuranceInfos",
-    path = "getInsuranceInfos"
-)
-public interface GetInsuranceInfoRepository
-    extends PagingAndSortingRepository<GetInsuranceInfo, Long> {}
+@RepositoryRestResource(collectionResourceRel = "myPages", path = "myPages")
+public interface MyPageRepository
+    extends PagingAndSortingRepository<MyPage, Long> {}

@@ -8,11 +8,17 @@ import lombok.Data;
 
 //<<< EDA / CQRS
 @Entity
-@Table(name = "GetInsuranceInfo_table")
+@Table(name = "MyPage_table")
 @Data
-public class GetInsuranceInfo {
+public class MyPage {
 
     @Id
     //@GeneratedValue(strategy=GenerationType.AUTO)
-    private Long id;
+    private Long insuranceId;
+
+    private Long usrId;
+    private Long prdId;
+    private String usrNm;
+    private String prdNm;
+    private String prdStatus;
 }

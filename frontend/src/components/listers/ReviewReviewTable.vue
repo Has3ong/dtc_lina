@@ -66,7 +66,7 @@
             values: [],
             headers: 
                 [
-                    { text: "id", value: "id" },
+                    { text: "insuranceId", value: "insuranceId" },
                     { text: "prdId", value: "prdId" },
                     { text: "usrId", value: "usrId" },
                     { text: "prdStatus", value: "prdStatus" },
@@ -88,6 +88,7 @@
             this.values = temp.data._embedded.reviews;
 
             this.newValue = {
+                'insuranceId': 0,
                 'prdId': 0,
                 'usrId': 0,
                 'prdStatus': '',

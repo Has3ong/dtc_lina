@@ -24,6 +24,7 @@ See the README.md files inside the each microservices directory:
 - Member
 - Review
 - Notification
+- MyPage
 
 
 ## Run API Gateway (Spring Gateway)
@@ -35,19 +36,22 @@ mvn spring-boot:run
 ## Test by API
 - Insurance
 ```
- http :8088/insurances id="id" prdNm="prdNm" usrId="usrId" 
+ http :8088/insurances insuranceId="insuranceId" usrId="usrId" prdId="prdId" 
 ```
 - Member
 ```
- http :8088/members id="id" usrId="usrId" usrNm="usrNm" prdId="prdId" prdStatus="prdStatus" prdNm="prdNm" 
+ http :8088/members insuranceId="insuranceId" usrId="usrId" usrNm="usrNm" prdId="prdId" prdStatus="prdStatus" prdNm="prdNm" 
 ```
 - Review
 ```
- http :8088/reviews id="id" prdId="prdId" usrId="usrId" prdStatus="prdStatus" prdNm="prdNm" 
+ http :8088/reviews insuranceId="insuranceId" prdId="prdId" usrId="usrId" prdStatus="prdStatus" prdNm="prdNm" 
 ```
 - Notification
 ```
- http :8088/ 
+ http :8088/notifications id="id" usrId="usrId" prdId="prdId" usrNm="usrNm" prdNm="prdNm" prdStatus="prdStatus" notId="notId" 
+```
+- MyPage
+```
 ```
 
 

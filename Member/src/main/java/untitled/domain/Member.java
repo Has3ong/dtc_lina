@@ -8,7 +8,6 @@ import lombok.Data;
 import untitled.MemberApplication;
 import untitled.domain.SubscriptionApplicationCompleted;
 import untitled.domain.SubscriptionCanceled;
-import untitled.domain.SubscriptionStatusChangedByMember;
 
 @Entity
 @Table(name = "Member_table")
@@ -18,7 +17,7 @@ public class Member {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long id;
+    private Long insuranceId;
 
     private Long usrId;
 
@@ -45,14 +44,6 @@ public class Member {
 
     @PreUpdate
     public void onPreUpdate() {}
-
-    @PreRemove
-    public void onPreRemove() {
-        SubscriptionStatusChangedByMember subscriptionStatusChangedByMember = new SubscriptionStatusChangedByMember(
-            this
-        );
-        subscriptionStatusChangedByMember.publishAfterCommit();
-    }
 
     public static MemberRepository repository() {
         MemberRepository memberRepository = MemberApplication.applicationContext.getBean(

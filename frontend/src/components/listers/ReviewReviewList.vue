@@ -48,7 +48,7 @@
                         </v-list-item-title>
 
                         <v-list-item-subtitle style="font-size:25px; font-weight:700;">
-                            [ Id :  {{data.id }} ] &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            [ InsuranceId :  {{data.insuranceId }} ] &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                             [ PrdId :  {{data.prdId }} ] &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                             [ UsrId :  {{data.usrId }} ] &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                             [ PrdStatus :  {{data.prdStatus }} ] &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -120,6 +120,7 @@
             this.values = temp.data._embedded.reviews;
             
             this.newValue = {
+                'insuranceId': 0,
                 'prdId': 0,
                 'usrId': 0,
                 'prdStatus': '',

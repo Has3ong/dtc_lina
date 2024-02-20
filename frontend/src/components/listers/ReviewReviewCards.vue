@@ -109,6 +109,7 @@
             me.values = temp.data._embedded.reviews;
             
             me.newValue = {
+                'insuranceId': 0,
                 'prdId': 0,
                 'usrId': 0,
                 'prdStatus': '',

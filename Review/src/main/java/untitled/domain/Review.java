@@ -8,7 +8,6 @@ import lombok.Data;
 import untitled.ReviewApplication;
 import untitled.domain.InsuranceReviewApproved;
 import untitled.domain.InsuranceReviewCanceled;
-import untitled.domain.SubscriptionStatusChangedByReviewer;
 
 @Entity
 @Table(name = "Review_table")
@@ -18,7 +17,7 @@ public class Review {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long id;
+    private Long insuranceId;
 
     private Long prdId;
 
@@ -42,12 +41,7 @@ public class Review {
     }
 
     @PreUpdate
-    public void onPreUpdate() {
-        SubscriptionStatusChangedByReviewer subscriptionStatusChangedByReviewer = new SubscriptionStatusChangedByReviewer(
-            this
-        );
-        subscriptionStatusChangedByReviewer.publishAfterCommit();
-    }
+    public void onPreUpdate() {}
 
     public static ReviewRepository repository() {
         ReviewRepository reviewRepository = ReviewApplication.applicationContext.getBean(

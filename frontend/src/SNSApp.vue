@@ -72,14 +72,15 @@
 
                     <v-list-item
                         class="px-2"
-                        key=""
-                        to="//"
+                        key="notifications"
+                        to="/notifications/notifications"
                         @click="changeUrl()"
                         color="primary"
                         style="font-weight:700;"
                     >
-                        
+                        Notification
                     </v-list-item>
+
 
 
                 </v-list>
@@ -182,10 +183,10 @@ export default {
                 ImageUrl: '',
             },
             { 
-                title: '', 
+                title: 'Notification', 
                 description: '', 
-                key: '', 
-                route: '//',
+                key: 'notifications', 
+                route: '/notifications/notifications',
                 ImageUrl: '',
             },
             

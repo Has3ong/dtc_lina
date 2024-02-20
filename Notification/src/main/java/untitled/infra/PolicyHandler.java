@@ -18,9 +18,82 @@ import untitled.domain.*;
 public class PolicyHandler {
 
     @Autowired
-    Repository Repository;
+    NotificationRepository notificationRepository;
 
     @StreamListener(KafkaProcessor.INPUT)
     public void whatever(@Payload String eventString) {}
+
+    @StreamListener(
+        value = KafkaProcessor.INPUT,
+        condition = "headers['type']=='SubscriptionCanceled'"
+    )
+    public void wheneverSubscriptionCanceled_GetNotificationByChangeStatus(
+        @Payload SubscriptionCanceled subscriptionCanceled
+    ) {
+        SubscriptionCanceled event = subscriptionCanceled;
+        System.out.println(
+            "\n\n##### listener GetNotificationByChangeStatus : " +
+            subscriptionCanceled +
+            "\n\n"
+        );
+
+        // Sample Logic //
+        Notification.getNotificationByChangeStatus(event);
+    }
+
+    @StreamListener(
+        value = KafkaProcessor.INPUT,
+        condition = "headers['type']=='SubscriptionApplicationCompleted'"
+    )
+    public void wheneverSubscriptionApplicationCompleted_GetNotificationByChangeStatus(
+        @Payload SubscriptionApplicationCompleted subscriptionApplicationCompleted
+    ) {
+        SubscriptionApplicationCompleted event =
+            subscriptionApplicationCompleted;
+        System.out.println(
+            "\n\n##### listener GetNotificationByChangeStatus : " +
+            subscriptionApplicationCompleted +
+            "\n\n"
+        );
+
+        // Sample Logic //
+        Notification.getNotificationByChangeStatus(event);
+    }
+
+    @StreamListener(
+        value = KafkaProcessor.INPUT,
+        condition = "headers['type']=='InsuranceReviewApproved'"
+    )
+    public void wheneverInsuranceReviewApproved_GetNotificationByChangeStatus(
+        @Payload InsuranceReviewApproved insuranceReviewApproved
+    ) {
+        InsuranceReviewApproved event = insuranceReviewApproved;
+        System.out.println(
+            "\n\n##### listener GetNotificationByChangeStatus : " +
+            insuranceReviewApproved +
+            "\n\n"
+        );
+
+        // Sample Logic //
+        Notification.getNotificationByChangeStatus(event);
+    }
+
+    @StreamListener(
+        value = KafkaProcessor.INPUT,
+        condition = "headers['type']=='InsuranceReviewCanceled'"
+    )
+    public void wheneverInsuranceReviewCanceled_GetNotificationByChangeStatus(
+        @Payload InsuranceReviewCanceled insuranceReviewCanceled
+    ) {
+        InsuranceReviewCanceled event = insuranceReviewCanceled;
+        System.out.println(
+            "\n\n##### listener GetNotificationByChangeStatus : " +
+            insuranceReviewCanceled +
+            "\n\n"
+        );
+
+        // Sample Logic //
+        Notification.getNotificationByChangeStatus(event);
+    }
 }
 //>>> Clean Arch / Inbound Adaptor

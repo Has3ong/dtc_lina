@@ -11,10 +11,9 @@ import untitled.infra.AbstractEvent;
 @ToString
 public class SubscriptionApplicationCompleted extends AbstractEvent {
 
-    private Long id;
-    private Long prdId;
+    private Long insuranceId;
     private String prdStatus;
-    private Long usrId;
+    private String prdNm;
 
     public SubscriptionApplicationCompleted(Member aggregate) {
         super(aggregate);

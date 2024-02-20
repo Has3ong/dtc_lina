@@ -11,8 +11,7 @@ import untitled.infra.AbstractEvent;
 @ToString
 public class InsurancePremiumPaid extends AbstractEvent {
 
-    private Long id;
-    private String prdNm;
+    private Long insuranceId;
     private Long usrId;
     private Long prdId;
 

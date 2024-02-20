@@ -109,8 +109,9 @@
             me.values = temp.data._embedded.insurances;
             
             me.newValue = {
-                'prdNm': '',
+                'insuranceId': 0,
                 'usrId': 0,
+                'prdId': 0,
             }
         },
         methods:{

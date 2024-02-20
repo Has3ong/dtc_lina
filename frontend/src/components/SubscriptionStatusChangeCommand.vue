@@ -1,7 +1,7 @@
 <template>
     <v-card outlined>
         <v-card-title>
-            SubscriptionStatusChangeByMember
+            SubscriptionStatusChange
         </v-card-title>
 
         <v-card-text>
@@ -12,9 +12,9 @@
             <v-btn
                     color="primary"
                     text
-                    @click="subscriptionStatusChangeByMember"
+                    @click="subscriptionStatusChange"
             >
-                SubscriptionStatusChangeByMember
+                SubscriptionStatusChange
             </v-btn>
             
             <v-btn
@@ -32,7 +32,7 @@
 <script>
    
     export default {
-        name: 'SubscriptionStatusChangeByMemberCommand',
+        name: 'SubscriptionStatusChangeCommand',
         components:{},
         props: {},
         data: () => ({
@@ -44,8 +44,8 @@
         watch: {
         },
         methods: {
-            subscriptionStatusChangeByMember() {
-                this.$emit('subscriptionStatusChangeByMember', this.value);
+            subscriptionStatusChange() {
+                this.$emit('subscriptionStatusChange', this.value);
             },
             close() {
                 this.$emit('closeDialog');

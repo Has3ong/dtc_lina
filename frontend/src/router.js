@@ -14,8 +14,9 @@ import MemberMemberDetail from "./components/listers/MemberMemberDetail"
 import ReviewReviewManager from "./components/listers/ReviewReviewCards"
 import ReviewReviewDetail from "./components/listers/ReviewReviewDetail"
 
-import Manager from "./components/listers/Cards"
-import Detail from "./components/listers/Detail"
+import NotificationNotificationManager from "./components/listers/NotificationNotificationCards"
+import NotificationNotificationDetail from "./components/listers/NotificationNotificationDetail"
+
 
 
 export default new Router({
@@ -56,15 +57,16 @@ export default new Router({
             },
 
             {
-                path: '//',
-                name: 'Manager',
-                component: Manager
+                path: '/notifications/notifications',
+                name: 'NotificationNotificationManager',
+                component: NotificationNotificationManager
             },
             {
-                path: '///:id',
-                name: 'Detail',
-                component: Detail
+                path: '/notifications/notifications/:id',
+                name: 'NotificationNotificationDetail',
+                component: NotificationNotificationDetail
             },
+
 
 
 

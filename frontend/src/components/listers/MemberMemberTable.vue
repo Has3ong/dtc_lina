@@ -66,7 +66,7 @@
             values: [],
             headers: 
                 [
-                    { text: "id", value: "id" },
+                    { text: "insuranceId", value: "insuranceId" },
                     { text: "usrId", value: "usrId" },
                     { text: "usrNm", value: "usrNm" },
                     { text: "prdId", value: "prdId" },
@@ -89,6 +89,7 @@
             this.values = temp.data._embedded.members;
 
             this.newValue = {
+                'insuranceId': 0,
                 'usrId': 0,
                 'usrNm': '',
                 'prdId': 0,

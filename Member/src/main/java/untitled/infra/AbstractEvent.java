@@ -37,8 +37,6 @@ public class AbstractEvent {
         );
         MessageChannel outputChannel = processor.outboundTopic();
 
-        System.out.println("\n\n===============================");
-        System.out.println("너 this 가 도대체 뭐니? : " + this);
         outputChannel.send(
             MessageBuilder
                 .withPayload(this)

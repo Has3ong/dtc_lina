@@ -11,7 +11,7 @@ import untitled.infra.AbstractEvent;
 @ToString
 public class InsuranceReviewCanceled extends AbstractEvent {
 
-    private Long id;
+    private Long insuranceId;
     private Long prdId;
     private Long usrId;
     private String prdStatus;
