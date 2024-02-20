@@ -9,18 +9,18 @@ import untitled.infra.AbstractEvent;
 //<<< DDD / Domain Event
 @Data
 @ToString
-public class SubscriptionStatusChanged extends AbstractEvent {
+public class SubscriptionStatusChangedByReviewer extends AbstractEvent {
 
     private Long id;
     private Long prdId;
     private Long usrId;
     private String prdStatus;
 
-    public SubscriptionStatusChanged(Review aggregate) {
+    public SubscriptionStatusChangedByReviewer(Review aggregate) {
         super(aggregate);
     }
 
-    public SubscriptionStatusChanged() {
+    public SubscriptionStatusChangedByReviewer() {
         super();
     }
 }

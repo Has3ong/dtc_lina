@@ -45,7 +45,7 @@
                     text
                     @click="save"
                 >
-                    SubscriptionStatusChange
+                    SubscriptionStatusChangeByReviewer
                 </v-btn>
                 <v-btn
                     color="primary"

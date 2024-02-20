@@ -1,7 +1,7 @@
 <template>
     <v-card outlined>
         <v-card-title>
-            InsurancePremiumPayment
+            SubscriptionStatusChangeByReviewer
         </v-card-title>
 
         <v-card-text>
@@ -12,9 +12,9 @@
             <v-btn
                     color="primary"
                     text
-                    @click="insurancePremiumPayment"
+                    @click="subscriptionStatusChangeByReviewer"
             >
-                InsurancePremiumPayment
+                SubscriptionStatusChangeByReviewer
             </v-btn>
             
             <v-btn
@@ -32,7 +32,7 @@
 <script>
    
     export default {
-        name: 'InsurancePremiumPaymentCommand',
+        name: 'SubscriptionStatusChangeByReviewerCommand',
         components:{},
         props: {},
         data: () => ({
@@ -44,8 +44,8 @@
         watch: {
         },
         methods: {
-            insurancePremiumPayment() {
-                this.$emit('insurancePremiumPayment', this.value);
+            subscriptionStatusChangeByReviewer() {
+                this.$emit('subscriptionStatusChangeByReviewer', this.value);
             },
             close() {
                 this.$emit('closeDialog');

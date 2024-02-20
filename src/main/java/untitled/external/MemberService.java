@@ -14,10 +14,4 @@ public interface MemberService {
 
     @RequestMapping(method = RequestMethod.PATCH, path = "/members")
     public void subscriptionCancel(@RequestBody Member member);
-
-    @RequestMapping(method = RequestMethod.PATCH, path = "/members")
-    public void subscriptionCancel(@RequestBody Member member);
-
-    @RequestMapping(method = RequestMethod.PATCH, path = "/members")
-    public void subscriptionCancel(@RequestBody Member member);
 }

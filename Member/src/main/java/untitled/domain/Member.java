@@ -8,6 +8,7 @@ import lombok.Data;
 import untitled.MemberApplication;
 import untitled.domain.SubscriptionApplicationCompleted;
 import untitled.domain.SubscriptionCanceled;
+import untitled.domain.SubscriptionStatusChangedByMember;
 
 @Entity
 @Table(name = "Member_table")
@@ -40,6 +41,11 @@ public class Member {
             this
         );
         subscriptionApplicationCompleted.publishAfterCommit();
+
+        SubscriptionStatusChangedByMember subscriptionStatusChangedByMember = new SubscriptionStatusChangedByMember(
+            this
+        );
+        subscriptionStatusChangedByMember.publishAfterCommit();
     }
 
     public static MemberRepository repository() {

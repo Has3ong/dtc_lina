@@ -8,7 +8,7 @@ import lombok.Data;
 import untitled.ReviewApplication;
 import untitled.domain.InsuranceReviewApproved;
 import untitled.domain.InsuranceReviewCanceled;
-import untitled.domain.SubscriptionStatusChanged;
+import untitled.domain.SubscriptionStatusChangedByReviewer;
 
 @Entity
 @Table(name = "Review_table")
@@ -43,10 +43,10 @@ public class Review {
 
     @PreUpdate
     public void onPreUpdate() {
-        SubscriptionStatusChanged subscriptionStatusChanged = new SubscriptionStatusChanged(
+        SubscriptionStatusChangedByReviewer subscriptionStatusChangedByReviewer = new SubscriptionStatusChangedByReviewer(
             this
         );
-        subscriptionStatusChanged.publishAfterCommit();
+        subscriptionStatusChangedByReviewer.publishAfterCommit();
     }
 
     public static ReviewRepository repository() {

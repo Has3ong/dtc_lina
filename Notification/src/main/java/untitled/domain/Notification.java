@@ -142,7 +142,7 @@ public class Notification {
     //>>> Clean Arch / Port Method
     //<<< Clean Arch / Port Method
     public static void getNotificationByChangeStatus(
-        SubscriptionStatusChanged subscriptionStatusChanged
+        SubscriptionStatusChangedByReviewer subscriptionStatusChangedByReviewer
     ) {
         //implement business logic here:
 
@@ -154,7 +154,33 @@ public class Notification {
 
         /** Example 2:  finding and process
         
-        repository().findById(subscriptionStatusChanged.get???()).ifPresent(notification->{
+        repository().findById(subscriptionStatusChangedByReviewer.get???()).ifPresent(notification->{
+            
+            notification // do something
+            repository().save(notification);
+
+
+         });
+        */
+
+    }
+
+    //>>> Clean Arch / Port Method
+    //<<< Clean Arch / Port Method
+    public static void getNotificationByChangeStatus(
+        SubscriptionStatusChangedByMember subscriptionStatusChangedByMember
+    ) {
+        //implement business logic here:
+
+        /** Example 1:  new item 
+        Notification notification = new Notification();
+        repository().save(notification);
+
+        */
+
+        /** Example 2:  finding and process
+        
+        repository().findById(subscriptionStatusChangedByMember.get???()).ifPresent(notification->{
             
             notification // do something
             repository().save(notification);
