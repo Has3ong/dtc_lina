@@ -30,8 +30,8 @@ public class Member {
 
     private String prdNm;
 
-    @PreUpdate
-    public void onPreUpdate() {
+    @PostUpdate
+    public void onPostUpdate() {
         SubscriptionCanceled subscriptionCanceled = new SubscriptionCanceled(
             this
         );
@@ -41,7 +41,13 @@ public class Member {
             this
         );
         subscriptionApplicationCompleted.publishAfterCommit();
+    }
 
+    @PreUpdate
+    public void onPreUpdate() {}
+
+    @PreRemove
+    public void onPreRemove() {
         SubscriptionStatusChangedByMember subscriptionStatusChangedByMember = new SubscriptionStatusChangedByMember(
             this
         );

@@ -20,14 +20,7 @@ public class PolicyHandler {
     @Autowired
     MemberRepository memberRepository;
 
-    @StreamListener(
-        value = KafkaProcessor.INPUT,
-        condition = "headers['type']=='InsurancePremiumPaid'"
-    )
-    public void InsurancePremiumPaid_createInsurance(@Payload InsurancePremiumPaid insurancePremiumPaid) {
-        InsurancePremiumPaid event = insurancePremiumPaid;
-        System.out.println("\n\n==================================================");
-        System.out.println("##### listener IncreaseStock : " + insurancePremiumPaid + " / EventInfo : " + event + "\n\n");
-    }
+    @StreamListener(KafkaProcessor.INPUT)
+    public void whatever(@Payload String eventString) {}
 }
 //>>> Clean Arch / Inbound Adaptor
