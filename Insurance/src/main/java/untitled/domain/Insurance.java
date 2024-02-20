@@ -22,6 +22,8 @@ public class Insurance {
 
     private Long usrId;
 
+    private Long prdId;
+
     @PostPersist
     public void onPostPersist() {
         InsurancePremiumPaid insurancePremiumPaid = new InsurancePremiumPaid(

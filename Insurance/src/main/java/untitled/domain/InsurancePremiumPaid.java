@@ -14,6 +14,7 @@ public class InsurancePremiumPaid extends AbstractEvent {
     private Long id;
     private String prdNm;
     private Long usrId;
+    private Long prdId;
 
     public InsurancePremiumPaid(Insurance aggregate) {
         super(aggregate);
