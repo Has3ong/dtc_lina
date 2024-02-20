@@ -70,6 +70,18 @@
                     </v-list-item>
 
 
+                    <v-list-item
+                        class="px-2"
+                        key=""
+                        to="//"
+                        @click="changeUrl()"
+                        color="primary"
+                        style="font-weight:700;"
+                    >
+                        
+                    </v-list-item>
+
+
                 </v-list>
             </v-navigation-drawer>
         </div>
@@ -167,6 +179,13 @@ export default {
                 description: '', 
                 key: 'reviews', 
                 route: '/reviews/reviews',
+                ImageUrl: '',
+            },
+            { 
+                title: '', 
+                description: '', 
+                key: '', 
+                route: '//',
                 ImageUrl: '',
             },
             

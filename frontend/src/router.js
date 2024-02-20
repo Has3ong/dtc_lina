@@ -14,6 +14,9 @@ import MemberMemberDetail from "./components/listers/MemberMemberDetail"
 import ReviewReviewManager from "./components/listers/ReviewReviewCards"
 import ReviewReviewDetail from "./components/listers/ReviewReviewDetail"
 
+import Manager from "./components/listers/Cards"
+import Detail from "./components/listers/Detail"
+
 
 export default new Router({
     // mode: 'history',
@@ -50,6 +53,17 @@ export default new Router({
                 path: '/reviews/reviews/:id',
                 name: 'ReviewReviewDetail',
                 component: ReviewReviewDetail
+            },
+
+            {
+                path: '//',
+                name: 'Manager',
+                component: Manager
+            },
+            {
+                path: '///:id',
+                name: 'Detail',
+                component: Detail
             },
 
 

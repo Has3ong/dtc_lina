@@ -39,21 +39,14 @@
                     text
                     @click="save"
                 >
-                    ChangeSubscriptionStatus
+                    SubscriptionCancel
                 </v-btn>
                 <v-btn
                     color="primary"
                     text
                     @click="save"
                 >
-                    InsurancePremiumPaymentCompleted
-                </v-btn>
-                <v-btn
-                    color="primary"
-                    text
-                    @click="save"
-                >
-                    CancelSubscription
+                    SubscriptionApplicationComplete
                 </v-btn>
                 <v-btn
                     color="primary"

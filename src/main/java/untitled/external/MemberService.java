@@ -10,14 +10,14 @@ import org.springframework.web.bind.annotation.RequestMethod;
 @FeignClient(name = "Member", url = "${api.url.Member}")
 public interface MemberService {
     @RequestMapping(method = RequestMethod.PATCH, path = "/members")
-    public void changeSubscriptionStatus(@RequestBody Member member);
+    public void subscriptionCancel(@RequestBody Member member);
 
     @RequestMapping(method = RequestMethod.PATCH, path = "/members")
-    public void changeSubscriptionStatus(@RequestBody Member member);
+    public void subscriptionCancel(@RequestBody Member member);
 
     @RequestMapping(method = RequestMethod.PATCH, path = "/members")
-    public void changeSubscriptionStatus(@RequestBody Member member);
+    public void subscriptionCancel(@RequestBody Member member);
 
     @RequestMapping(method = RequestMethod.PATCH, path = "/members")
-    public void changeSubscriptionStatus(@RequestBody Member member);
+    public void subscriptionCancel(@RequestBody Member member);
 }

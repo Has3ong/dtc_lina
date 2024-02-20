@@ -10,14 +10,14 @@ import org.springframework.web.bind.annotation.RequestMethod;
 @FeignClient(name = "Review", url = "${api.url.Review}")
 public interface ReviewService {
     @RequestMapping(method = RequestMethod.POST, path = "/reviews")
-    public void insurancePremiumPaymentCompleted(@RequestBody Review review);
+    public void insuranceReview(@RequestBody Review review);
 
     @RequestMapping(method = RequestMethod.POST, path = "/reviews")
-    public void insurancePremiumPaymentCompleted(@RequestBody Review review);
+    public void insuranceReview(@RequestBody Review review);
 
     @RequestMapping(method = RequestMethod.PATCH, path = "/reviews")
-    public void changeSubscriptionStatus(@RequestBody Review review);
+    public void subscriptionStatusChange(@RequestBody Review review);
 
     @RequestMapping(method = RequestMethod.PATCH, path = "/reviews")
-    public void changeSubscriptionStatus(@RequestBody Review review);
+    public void subscriptionStatusChange(@RequestBody Review review);
 }

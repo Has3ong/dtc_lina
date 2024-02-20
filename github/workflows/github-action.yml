@@ -32,6 +32,7 @@ jobs:
           mvn clean package -f ./Insurance/pom.xml
           mvn clean package -f ./Member/pom.xml
           mvn clean package -f ./Review/pom.xml
+          mvn clean package -f ./Notification/pom.xml
 
       - name: Docker Build and push for Insurance
         uses: docker/build-push-action@v4
@@ -62,4 +63,14 @@ jobs:
           tags: |
             ghcr.io/${{ github.repository }}/review:latest
             ghcr.io/${{ github.repository }}/review:${{ github.ref_name }}
+            
+      - name: Docker Build and push for Notification
+        uses: docker/build-push-action@v4
+        with:
+          context: ./Notification
+          platforms: linux/amd64,linux/arm64
+          push: true
+          tags: |
+            ghcr.io/${{ github.repository }}/notification:latest
+            ghcr.io/${{ github.repository }}/notification:${{ github.ref_name }}
             

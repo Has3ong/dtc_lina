@@ -38,14 +38,14 @@
                     text
                     @click="save"
                 >
-                    InsurancePremiumPaymentCompleted
+                    InsuranceReview
                 </v-btn>
                 <v-btn
                     color="primary"
                     text
                     @click="save"
                 >
-                    ChangeSubscriptionStatus
+                    SubscriptionStatusChange
                 </v-btn>
                 <v-btn
                     color="primary"

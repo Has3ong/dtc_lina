@@ -6,8 +6,8 @@ import java.util.List;
 import javax.persistence.*;
 import lombok.Data;
 import untitled.MemberApplication;
-import untitled.domain.InsurancePremiumPaid;
-import untitled.domain.SubscriptionStatusChanged;
+import untitled.domain.SubscriptionApplicationCompleted;
+import untitled.domain.SubscriptionCanceled;
 
 @Entity
 @Table(name = "Member_table")
@@ -31,15 +31,15 @@ public class Member {
 
     @PreUpdate
     public void onPreUpdate() {
-        SubscriptionStatusChanged subscriptionStatusChanged = new SubscriptionStatusChanged(
+        SubscriptionCanceled subscriptionCanceled = new SubscriptionCanceled(
             this
         );
-        subscriptionStatusChanged.publishAfterCommit();
+        subscriptionCanceled.publishAfterCommit();
 
-        InsurancePremiumPaid insurancePremiumPaid = new InsurancePremiumPaid(
+        SubscriptionApplicationCompleted subscriptionApplicationCompleted = new SubscriptionApplicationCompleted(
             this
         );
-        insurancePremiumPaid.publishAfterCommit();
+        subscriptionApplicationCompleted.publishAfterCommit();
     }
 
     public static MemberRepository repository() {

@@ -6,8 +6,8 @@ import java.util.List;
 import javax.persistence.*;
 import lombok.Data;
 import untitled.ReviewApplication;
-import untitled.domain.ReviewApproved;
-import untitled.domain.ReviewCanceled;
+import untitled.domain.InsuranceReviewApproved;
+import untitled.domain.InsuranceReviewCanceled;
 import untitled.domain.SubscriptionStatusChanged;
 
 @Entity
@@ -30,11 +30,15 @@ public class Review {
 
     @PostPersist
     public void onPostPersist() {
-        ReviewApproved reviewApproved = new ReviewApproved(this);
-        reviewApproved.publishAfterCommit();
+        InsuranceReviewApproved insuranceReviewApproved = new InsuranceReviewApproved(
+            this
+        );
+        insuranceReviewApproved.publishAfterCommit();
 
-        ReviewCanceled reviewCanceled = new ReviewCanceled(this);
-        reviewCanceled.publishAfterCommit();
+        InsuranceReviewCanceled insuranceReviewCanceled = new InsuranceReviewCanceled(
+            this
+        );
+        insuranceReviewCanceled.publishAfterCommit();
     }
 
     @PreUpdate
