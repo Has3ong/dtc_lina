@@ -1,9 +1,5 @@
 package untitled.infra;
 
-import com.fasterxml.jackson.databind.DeserializationFeature;
-import com.fasterxml.jackson.databind.ObjectMapper;
-import javax.naming.NameParser;
-import javax.naming.NameParser;
 import javax.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cloud.stream.annotation.StreamListener;
@@ -20,7 +16,20 @@ public class PolicyHandler {
     @Autowired
     MemberRepository memberRepository;
 
-    @StreamListener(KafkaProcessor.INPUT)
-    public void whatever(@Payload String eventString) {}
+    @StreamListener(
+        value = KafkaProcessor.INPUT,
+        condition = "headers['type']=='InsurancePremiumPaid'"
+    )
+    public void InsurancePremiumPaid_SubscriptionApplicationComplete(
+        @Payload Member member
+    ) {
+        Member event = member;
+        System.out.println("\n\n==================================================");
+        System.out.println("##### listener IncreaseStock : " + member + " / EventInfo : " + event + "\n\n");
+
+        memberRepository.save(member);
+        System.out.println("\n\n==================================================");
+        System.out.println("##### save Repository Information : " + memberRepository.findById(member.getId()));
+    }
 }
 //>>> Clean Arch / Inbound Adaptor
