@@ -31,9 +31,9 @@ jobs:
         run: |
           mvn clean package -f ./Reservation/pom.xml
           mvn clean package -f ./Customer/pom.xml
-          mvn clean package -f ./Airplane/pom.xml
           mvn clean package -f ./Notification/pom.xml
           mvn clean package -f ./Admin/pom.xml
+          mvn clean package -f ./Airplane/pom.xml
 
       - name: Docker Build and push for Reservation
         uses: docker/build-push-action@v4
@@ -55,16 +55,6 @@ jobs:
             ghcr.io/${{ github.repository }}/customer:latest
             ghcr.io/${{ github.repository }}/customer:${{ github.ref_name }}
             
-      - name: Docker Build and push for Airplane
-        uses: docker/build-push-action@v4
-        with:
-          context: ./Airplane
-          platforms: linux/amd64,linux/arm64
-          push: true
-          tags: |
-            ghcr.io/${{ github.repository }}/airplane:latest
-            ghcr.io/${{ github.repository }}/airplane:${{ github.ref_name }}
-            
       - name: Docker Build and push for Notification
         uses: docker/build-push-action@v4
         with:
@@ -84,4 +74,14 @@ jobs:
           tags: |
             ghcr.io/${{ github.repository }}/admin:latest
             ghcr.io/${{ github.repository }}/admin:${{ github.ref_name }}
+            
+      - name: Docker Build and push for Airplane
+        uses: docker/build-push-action@v4
+        with:
+          context: ./Airplane
+          platforms: linux/amd64,linux/arm64
+          push: true
+          tags: |
+            ghcr.io/${{ github.repository }}/airplane:latest
+            ghcr.io/${{ github.repository }}/airplane:${{ github.ref_name }}
             

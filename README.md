@@ -22,9 +22,9 @@ See the README.md files inside the each microservices directory:
 
 - Reservation
 - Customer
-- Airplane
 - Notification
 - Admin
+- Airplane
 
 
 ## Run API Gateway (Spring Gateway)
@@ -41,13 +41,13 @@ mvn spring-boot:run
 - Customer
 ```
 ```
-- Airplane
-```
-```
 - Notification
 ```
 ```
 - Admin
+```
+```
+- Airplane
 ```
 ```
 

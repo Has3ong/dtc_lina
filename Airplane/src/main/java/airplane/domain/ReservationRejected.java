@@ -11,8 +11,7 @@ import lombok.*;
 @ToString
 public class ReservationRejected extends AbstractEvent {
 
-    private Long airplaneId;
-    private Integer seatQty;
+    private Long airPlaneId;
     private Long reservId;
     private String reservStatus;
 

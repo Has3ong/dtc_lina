@@ -18,6 +18,14 @@ public class Admin {
     private Long airPlaneId;
 
     private Integer seatQty;
+    
+    @PostPersist
+    public void onPostPersist() {
+    	AirplaneCreated airplaneCreated = new AirplaneCreated(
+            this
+        );
+    	airplaneCreated.publishAfterCommit();
+    }
 
     public static AdminRepository repository() {
         AdminRepository adminRepository = AdminApplication.applicationContext.getBean(
