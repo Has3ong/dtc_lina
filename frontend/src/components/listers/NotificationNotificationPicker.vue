@@ -15,22 +15,13 @@
                             <v-list-item-title>
                             </v-list-item-title>
                             <v-list-item-subtitle>
-                                UsrId :  {{item.usrId }}
+                                ReservId :  {{item.reservId }}
                             </v-list-item-subtitle>
                             <v-list-item-subtitle>
-                                PrdId :  {{item.prdId }}
+                                AirPlaneId :  {{item.airPlaneId }}
                             </v-list-item-subtitle>
                             <v-list-item-subtitle>
-                                UsrNm :  {{item.usrNm }}
-                            </v-list-item-subtitle>
-                            <v-list-item-subtitle>
-                                PrdNm :  {{item.prdNm }}
-                            </v-list-item-subtitle>
-                            <v-list-item-subtitle>
-                                PrdStatus :  {{item.prdStatus }}
-                            </v-list-item-subtitle>
-                            <v-list-item-subtitle>
-                                NotId :  {{item.notId }}
+                                ReservStatus :  {{item.reservStatus }}
                             </v-list-item-subtitle>
                         </v-list-item-content>
 
@@ -83,12 +74,6 @@
                 if(val != undefined) {
                     var arr = this.list[val]._links.self.href.split('/');
                     obj['id'] = arr[4]; 
-                    
-                    
-                    
-                    
-                    
-                    
                     
                     
                     

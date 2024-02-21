@@ -44,19 +44,13 @@
                             
                             
                             
-                            
-                            
-                            
                         </v-list-item-title>
 
                         <v-list-item-subtitle style="font-size:25px; font-weight:700;">
                             [ Id :  {{data.id }} ] &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                            [ UsrId :  {{data.usrId }} ] &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                            [ PrdId :  {{data.prdId }} ] &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                            [ UsrNm :  {{data.usrNm }} ] &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                            [ PrdNm :  {{data.prdNm }} ] &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                            [ PrdStatus :  {{data.prdStatus }} ] &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                            [ NotId :  {{data.notId }} ] &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            [ ReservId :  {{data.reservId }} ] &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            [ AirPlaneId :  {{data.airPlaneId }} ] &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            [ ReservStatus :  {{data.reservStatus }} ] &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                         </v-list-item-subtitle>
 
                     </v-list-item-content>
@@ -124,12 +118,9 @@
             this.values = temp.data._embedded.notifications;
             
             this.newValue = {
-                'usrId': 0,
-                'prdId': 0,
-                'usrNm': '',
-                'prdNm': '',
-                'prdStatus': '',
-                'notId': 0,
+                'reservId': 0,
+                'airPlaneId': 0,
+                'reservStatus': '',
             }
         },
         methods: {

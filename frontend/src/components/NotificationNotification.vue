@@ -16,12 +16,9 @@
         </v-card-title >        
 
         <v-card-text>
-            <Number label="UsrId" v-model="value.usrId" :editMode="editMode" :inputUI="''"/>
-            <Number label="PrdId" v-model="value.prdId" :editMode="editMode" :inputUI="''"/>
-            <String label="UsrNm" v-model="value.usrNm" :editMode="editMode" :inputUI="''"/>
-            <String label="PrdNm" v-model="value.prdNm" :editMode="editMode" :inputUI="''"/>
-            <String label="PrdStatus" v-model="value.prdStatus" :editMode="editMode" :inputUI="''"/>
-            <Number label="NotId" v-model="value.notId" :editMode="editMode" :inputUI="''"/>
+            <Number label="ReservId" v-model="value.reservId" :editMode="editMode" :inputUI="''"/>
+            <Number label="AirPlaneId" v-model="value.airPlaneId" :editMode="editMode" :inputUI="''"/>
+            <String label="ReservStatus" v-model="value.reservStatus" :editMode="editMode" :inputUI="''"/>
         </v-card-text>
 
         <v-card-actions>

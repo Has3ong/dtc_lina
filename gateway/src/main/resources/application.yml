@@ -9,23 +9,23 @@ spring:
     gateway:
 #<<< API Gateway / Routes
       routes:
-        - id: Insurance
+        - id: Reservation
           uri: http://localhost:8082
           predicates:
-            - Path=/insurances/**, 
-        - id: Member
+            - Path=/reservations/**, 
+        - id: Customer
           uri: http://localhost:8083
           predicates:
-            - Path=/members/**, 
-        - id: Review
+            - Path=, 
+        - id: Airplane
           uri: http://localhost:8084
           predicates:
-            - Path=/reviews/**, 
+            - Path=, 
         - id: Notification
           uri: http://localhost:8085
           predicates:
-            - Path=/notifications/**, 
-        - id: MyPage
+            - Path=, 
+        - id: Admin
           uri: http://localhost:8086
           predicates:
             - Path=, 
@@ -53,24 +53,24 @@ spring:
   cloud:
     gateway:
       routes:
-        - id: Insurance
-          uri: http://insurance:8080
+        - id: Reservation
+          uri: http://reservation:8080
           predicates:
-            - Path=/insurances/**, 
-        - id: Member
-          uri: http://member:8080
+            - Path=/reservations/**, 
+        - id: Customer
+          uri: http://customer:8080
           predicates:
-            - Path=/members/**, 
-        - id: Review
-          uri: http://review:8080
+            - Path=, 
+        - id: Airplane
+          uri: http://airplane:8080
           predicates:
-            - Path=/reviews/**, 
+            - Path=, 
         - id: Notification
           uri: http://notification:8080
           predicates:
-            - Path=/notifications/**, 
-        - id: MyPage
-          uri: http://myPage:8080
+            - Path=, 
+        - id: Admin
+          uri: http://admin:8080
           predicates:
             - Path=, 
         - id: frontend

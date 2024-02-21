@@ -31,12 +31,12 @@ spring:
         event-in:
           group: Notification
 #<<< EDA / Topic Name
-          destination: untitled
+          destination: airplane
 #>>> EDA / Topic Name
           contentType: application/json
         event-out:
 #<<< EDA / Topic Name
-          destination: untitled
+          destination: airplane
 #>>> EDA / Topic Name
           contentType: application/json
 
@@ -75,10 +75,10 @@ spring:
       bindings:
         event-in:
           group: Notification
-          destination: untitled
+          destination: airplane
           contentType: application/json
         event-out:
-          destination: untitled
+          destination: airplane
           contentType: application/json
 
 

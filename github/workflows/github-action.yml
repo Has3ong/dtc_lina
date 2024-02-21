@@ -29,41 +29,41 @@ jobs:
       
       - name: Build Maven Projects
         run: |
-          mvn clean package -f ./Insurance/pom.xml
-          mvn clean package -f ./Member/pom.xml
-          mvn clean package -f ./Review/pom.xml
+          mvn clean package -f ./Reservation/pom.xml
+          mvn clean package -f ./Customer/pom.xml
+          mvn clean package -f ./Airplane/pom.xml
           mvn clean package -f ./Notification/pom.xml
-          mvn clean package -f ./MyPage/pom.xml
+          mvn clean package -f ./Admin/pom.xml
 
-      - name: Docker Build and push for Insurance
+      - name: Docker Build and push for Reservation
         uses: docker/build-push-action@v4
         with:
-          context: ./Insurance
+          context: ./Reservation
           platforms: linux/amd64,linux/arm64
           push: true
           tags: |
-            ghcr.io/${{ github.repository }}/insurance:latest
-            ghcr.io/${{ github.repository }}/insurance:${{ github.ref_name }}
+            ghcr.io/${{ github.repository }}/reservation:latest
+            ghcr.io/${{ github.repository }}/reservation:${{ github.ref_name }}
             
-      - name: Docker Build and push for Member
+      - name: Docker Build and push for Customer
         uses: docker/build-push-action@v4
         with:
-          context: ./Member
+          context: ./Customer
           platforms: linux/amd64,linux/arm64
           push: true
           tags: |
-            ghcr.io/${{ github.repository }}/member:latest
-            ghcr.io/${{ github.repository }}/member:${{ github.ref_name }}
+            ghcr.io/${{ github.repository }}/customer:latest
+            ghcr.io/${{ github.repository }}/customer:${{ github.ref_name }}
             
-      - name: Docker Build and push for Review
+      - name: Docker Build and push for Airplane
         uses: docker/build-push-action@v4
         with:
-          context: ./Review
+          context: ./Airplane
           platforms: linux/amd64,linux/arm64
           push: true
           tags: |
-            ghcr.io/${{ github.repository }}/review:latest
-            ghcr.io/${{ github.repository }}/review:${{ github.ref_name }}
+            ghcr.io/${{ github.repository }}/airplane:latest
+            ghcr.io/${{ github.repository }}/airplane:${{ github.ref_name }}
             
       - name: Docker Build and push for Notification
         uses: docker/build-push-action@v4
@@ -75,13 +75,13 @@ jobs:
             ghcr.io/${{ github.repository }}/notification:latest
             ghcr.io/${{ github.repository }}/notification:${{ github.ref_name }}
             
-      - name: Docker Build and push for MyPage
+      - name: Docker Build and push for Admin
         uses: docker/build-push-action@v4
         with:
-          context: ./MyPage
+          context: ./Admin
           platforms: linux/amd64,linux/arm64
           push: true
           tags: |
-            ghcr.io/${{ github.repository }}/mypage:latest
-            ghcr.io/${{ github.repository }}/mypage:${{ github.ref_name }}
+            ghcr.io/${{ github.repository }}/admin:latest
+            ghcr.io/${{ github.repository }}/admin:${{ github.ref_name }}
             

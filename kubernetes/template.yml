@@ -3,22 +3,22 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: Insurance
+  name: Reservation
   labels:
-    app: Insurance
+    app: Reservation
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: Insurance
+      app: Reservation
   template:
     metadata:
       labels:
-        app: Insurance
+        app: Reservation
     spec:
       containers:
-        - name: Insurance
-          image: username/Insurance:latest
+        - name: Reservation
+          image: username/Reservation:latest
           ports:
             - containerPort: 8080
           readinessProbe:
@@ -43,22 +43,22 @@ spec:
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: Member
+  name: Customer
   labels:
-    app: Member
+    app: Customer
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: Member
+      app: Customer
   template:
     metadata:
       labels:
-        app: Member
+        app: Customer
     spec:
       containers:
-        - name: Member
-          image: username/Member:latest
+        - name: Customer
+          image: username/Customer:latest
           ports:
             - containerPort: 8080
           readinessProbe:
@@ -83,22 +83,22 @@ spec:
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: Review
+  name: Airplane
   labels:
-    app: Review
+    app: Airplane
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: Review
+      app: Airplane
   template:
     metadata:
       labels:
-        app: Review
+        app: Airplane
     spec:
       containers:
-        - name: Review
-          image: username/Review:latest
+        - name: Airplane
+          image: username/Airplane:latest
           ports:
             - containerPort: 8080
           readinessProbe:
@@ -163,22 +163,22 @@ spec:
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: MyPage
+  name: Admin
   labels:
-    app: MyPage
+    app: Admin
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: MyPage
+      app: Admin
   template:
     metadata:
       labels:
-        app: MyPage
+        app: Admin
     spec:
       containers:
-        - name: MyPage
-          image: username/MyPage:latest
+        - name: Admin
+          image: username/Admin:latest
           ports:
             - containerPort: 8080
           readinessProbe:
@@ -205,15 +205,15 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: Insurance
+  name: Reservation
   labels:
-    app: Insurance
+    app: Reservation
 spec:
   ports:
     - port: 8080
       targetPort: 8080
   selector:
-    app: Insurance
+    app: Reservation
 
 
 ---
@@ -222,15 +222,15 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: Member
+  name: Customer
   labels:
-    app: Member
+    app: Customer
 spec:
   ports:
     - port: 8080
       targetPort: 8080
   selector:
-    app: Member
+    app: Customer
 
 
 ---
@@ -239,15 +239,15 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: Review
+  name: Airplane
   labels:
-    app: Review
+    app: Airplane
 spec:
   ports:
     - port: 8080
       targetPort: 8080
   selector:
-    app: Review
+    app: Airplane
 
 
 ---
@@ -273,13 +273,13 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: MyPage
+  name: Admin
   labels:
-    app: MyPage
+    app: Admin
 spec:
   ports:
     - port: 8080
       targetPort: 8080
   selector:
-    app: MyPage
+    app: Admin
 

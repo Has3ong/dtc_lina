@@ -36,50 +36,17 @@
                 <v-list>
                     <v-list-item
                         class="px-2"
-                        key="insurances"
-                        to="/insurances/insurances"
+                        key="reservations"
+                        to="/reservations/reservations"
                         @click="changeUrl()"
                         color="primary"
                         style="font-weight:700;"
                     >
-                        Insurance
+                        Reservation
                     </v-list-item>
 
 
-                    <v-list-item
-                        class="px-2"
-                        key="members"
-                        to="/members/members"
-                        @click="changeUrl()"
-                        color="primary"
-                        style="font-weight:700;"
-                    >
-                        Member
-                    </v-list-item>
 
-
-                    <v-list-item
-                        class="px-2"
-                        key="reviews"
-                        to="/reviews/reviews"
-                        @click="changeUrl()"
-                        color="primary"
-                        style="font-weight:700;"
-                    >
-                        Review
-                    </v-list-item>
-
-
-                    <v-list-item
-                        class="px-2"
-                        key="notifications"
-                        to="/notifications/notifications"
-                        @click="changeUrl()"
-                        color="primary"
-                        style="font-weight:700;"
-                    >
-                        Notification
-                    </v-list-item>
 
 
 
@@ -162,31 +129,10 @@ export default {
         ImageUrl: '',
         aggregate: [
             { 
-                title: 'Insurance', 
+                title: 'Reservation', 
                 description: '', 
-                key: 'insurances', 
-                route: '/insurances/insurances',
-                ImageUrl: '',
-            },
-            { 
-                title: 'Member', 
-                description: '', 
-                key: 'members', 
-                route: '/members/members',
-                ImageUrl: '',
-            },
-            { 
-                title: 'Review', 
-                description: '', 
-                key: 'reviews', 
-                route: '/reviews/reviews',
-                ImageUrl: '',
-            },
-            { 
-                title: 'Notification', 
-                description: '', 
-                key: 'notifications', 
-                route: '/notifications/notifications',
+                key: 'reservations', 
+                route: '/reservations/reservations',
                 ImageUrl: '',
             },
             

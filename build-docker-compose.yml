@@ -23,7 +23,7 @@ services:
       KAFKA_OFFSETS_TOPIC_REPLICATION_FACTOR: 1
       KAFKA_TRANSACTION_STATE_LOG_REPLICATION_FACTOR: 1
 
-  Insurance:
+  Reservation:
     depends_on: 
       - kafka
     image: adoptopenjdk/maven-openjdk11:latest
@@ -34,10 +34,10 @@ services:
       - 8082:8082
     working_dir: /usr/src
     volumes:
-      - ./Insurance:/usr/src
+      - ./Reservation:/usr/src
       - ./maven-repo:/root/.m2
       
-  Member:
+  Customer:
     depends_on: 
       - kafka
     image: adoptopenjdk/maven-openjdk11:latest
@@ -48,10 +48,10 @@ services:
       - 8083:8083
     working_dir: /usr/src
     volumes:
-      - ./Member:/usr/src
+      - ./Customer:/usr/src
       - ./maven-repo:/root/.m2
       
-  Review:
+  Airplane:
     depends_on: 
       - kafka
     image: adoptopenjdk/maven-openjdk11:latest
@@ -62,7 +62,7 @@ services:
       - 8084:8084
     working_dir: /usr/src
     volumes:
-      - ./Review:/usr/src
+      - ./Airplane:/usr/src
       - ./maven-repo:/root/.m2
       
   Notification:
@@ -79,7 +79,7 @@ services:
       - ./Notification:/usr/src
       - ./maven-repo:/root/.m2
       
-  MyPage:
+  Admin:
     depends_on: 
       - kafka
     image: adoptopenjdk/maven-openjdk11:latest
@@ -90,6 +90,6 @@ services:
       - 8086:8086
     working_dir: /usr/src
     volumes:
-      - ./MyPage:/usr/src
+      - ./Admin:/usr/src
       - ./maven-repo:/root/.m2
       

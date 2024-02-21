@@ -109,12 +109,9 @@
             me.values = temp.data._embedded.notifications;
             
             me.newValue = {
-                'usrId': 0,
-                'prdId': 0,
-                'usrNm': '',
-                'prdNm': '',
-                'prdStatus': '',
-                'notId': 0,
+                'reservId': 0,
+                'airPlaneId': 0,
+                'reservStatus': '',
             }
         },
         methods:{

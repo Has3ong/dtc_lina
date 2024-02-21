@@ -67,12 +67,9 @@
             headers: 
                 [
                     { text: "id", value: "id" },
-                    { text: "usrId", value: "usrId" },
-                    { text: "prdId", value: "prdId" },
-                    { text: "usrNm", value: "usrNm" },
-                    { text: "prdNm", value: "prdNm" },
-                    { text: "prdStatus", value: "prdStatus" },
-                    { text: "notId", value: "notId" },
+                    { text: "reservId", value: "reservId" },
+                    { text: "airPlaneId", value: "airPlaneId" },
+                    { text: "reservStatus", value: "reservStatus" },
                 ],
             notification : [],
             newValue: {},
@@ -90,12 +87,9 @@
             this.values = temp.data._embedded.notifications;
 
             this.newValue = {
-                'usrId': 0,
-                'prdId': 0,
-                'usrNm': '',
-                'prdNm': '',
-                'prdStatus': '',
-                'notId': 0,
+                'reservId': 0,
+                'airPlaneId': 0,
+                'reservStatus': '',
             }
         },
         methods: {

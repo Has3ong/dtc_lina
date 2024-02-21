@@ -6,22 +6,13 @@
 
         <v-card-text>
             <div>
-                <Number label="UsrId" v-model="item.usrId" :editMode="editMode" @change="change" />
+                <Number label="ReservId" v-model="item.reservId" :editMode="editMode" @change="change" />
             </div>
             <div>
-                <Number label="PrdId" v-model="item.prdId" :editMode="editMode" @change="change" />
+                <Number label="AirPlaneId" v-model="item.airPlaneId" :editMode="editMode" @change="change" />
             </div>
             <div>
-                <String label="UsrNm" v-model="item.usrNm" :editMode="editMode" @change="change" />
-            </div>
-            <div>
-                <String label="PrdNm" v-model="item.prdNm" :editMode="editMode" @change="change" />
-            </div>
-            <div>
-                <String label="PrdStatus" v-model="item.prdStatus" :editMode="editMode" @change="change" />
-            </div>
-            <div>
-                <Number label="NotId" v-model="item.notId" :editMode="editMode" @change="change" />
+                <String label="ReservStatus" v-model="item.reservStatus" :editMode="editMode" @change="change" />
             </div>
         </v-card-text>
 
