@@ -8,8 +8,8 @@ import org.springframework.data.repository.PagingAndSortingRepository;
 import org.springframework.data.rest.core.annotation.RepositoryRestResource;
 
 @RepositoryRestResource(
-    collectionResourceRel = "getReservationInfos",
-    path = "getReservationInfos"
+    collectionResourceRel = "customers",
+    path = "customers"
 )
 public interface GetReservationInfoRepository extends PagingAndSortingRepository<GetReservationInfo, Long> {
     Optional<GetReservationInfo> findByReservId(Long reservId);
