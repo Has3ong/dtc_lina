@@ -31,12 +31,13 @@ public class Reservation {
         );
         reservationCompleted.publishAfterCommit();
     }
-
+/*
     @PostUpdate
     public void onPostUpdate() {
         ReservationCanceled reservationCanceled = new ReservationCanceled(this);
         reservationCanceled.publishAfterCommit();
     }
+ */
 
     @PreUpdate
     public void onPreUpdate() {

@@ -7,5 +7,5 @@ import org.springframework.data.rest.core.annotation.RepositoryRestResource;
 //<<< PoEAA / Repository
 @RepositoryRestResource(collectionResourceRel="airplanes", path="airplanes")
 public interface AirplaneRepository extends PagingAndSortingRepository<Airplane, Long>{
-    Optional<Airplane> findByAirplaneId(Long airplaneId);
+    Optional<Airplane> findByAirPlaneId(Long airPlaneId);
 }

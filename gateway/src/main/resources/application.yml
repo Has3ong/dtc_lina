@@ -28,7 +28,7 @@ spring:
         - id: Airplane
           uri: http://localhost:8086
           predicates:
-            - Path=/irplanes/**,
+            - Path=/airplanes/**,
         - id: frontend
           uri: http://localhost:8080
           predicates:

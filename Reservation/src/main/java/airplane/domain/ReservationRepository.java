@@ -3,6 +3,8 @@ package airplane.domain;
 import airplane.domain.*;
 import java.util.Date;
 import java.util.List;
+import java.util.Optional;
+
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.PagingAndSortingRepository;
@@ -13,5 +15,6 @@ import org.springframework.data.rest.core.annotation.RepositoryRestResource;
     collectionResourceRel = "reservations",
     path = "reservations"
 )
-public interface ReservationRepository
-    extends PagingAndSortingRepository<Reservation, Long> {}
+public interface ReservationRepository extends PagingAndSortingRepository<Reservation, Long> {
+    Optional<Reservation> deleteByReservId(Long reservId);
+}

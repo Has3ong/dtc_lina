@@ -17,26 +17,27 @@ public class GetReservationInfoViewHandler {
     @Autowired
     private GetReservationInfoRepository getReservationInfoRepository;
 
-    @StreamListener(KafkaProcessor.INPUT)
+    @StreamListener(
+        value = KafkaProcessor.INPUT,
+        condition = "headers['type']=='ReservationApproved'"
+    )
     public void whenReservationCompleted_then_CREATE_1(
         @Payload ReservationCompleted reservationCompleted
     ) {
-        try {
-            if (!reservationCompleted.validate()) return;
-
-            // view 객체 생성
-            GetReservationInfo getReservationInfo = new GetReservationInfo();
-            // view 객체에 이벤트의 Value 를 set 함
-            getReservationInfo.setReservId(reservationCompleted.getReservId());
-            getReservationInfo.setReservStatus("접수완료");
-            getReservationInfo.setAirPlaneId(
-                reservationCompleted.getAirPlaneId()
-            );
-            // view 레파지 토리에 save
-            getReservationInfoRepository.save(getReservationInfo);
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
+        System.out.println("=================================");
+        System.out.println("=================================");
+        System.out.println("=================================");
+        System.out.println(reservationCompleted);
+        // view 객체 생성
+        GetReservationInfo getReservationInfo = new GetReservationInfo();
+        // view 객체에 이벤트의 Value 를 set 함
+        getReservationInfo.setReservId(reservationCompleted.getReservId());
+        getReservationInfo.setReservStatus("접수완료");
+        getReservationInfo.setAirPlaneId(
+            reservationCompleted.getAirPlaneId()
+        );
+        // view 레파지 토리에 save
+        getReservationInfoRepository.save(getReservationInfo);
     }
 
     @StreamListener(KafkaProcessor.INPUT)

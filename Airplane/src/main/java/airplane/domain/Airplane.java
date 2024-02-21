@@ -17,7 +17,7 @@ public class Airplane {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long airplaneId;
+    private Long airPlaneId;
 
     private Long reservId;
 

@@ -30,7 +30,7 @@ public class PolicyHandler {
         @Payload Airplane airplane
     ) {
     	
-    	Airplane airplaneStatus = airplaneRepository.findByAirplaneId(airplane.getAirplaneId()).get();
+    	Airplane airplaneStatus = airplaneRepository.findByAirPlaneId(airplane.getAirPlaneId()).get();
     	
         if (null == airplaneStatus || airplaneStatus.getSeatQty() == 0) {
         	airplane.setReservStatus("취소");
@@ -38,6 +38,8 @@ public class PolicyHandler {
             reservationRejected.publishAfterCommit();
         } else {
         	airplane.setReservStatus("승인");
+            airplaneStatus.setSeatQty(airplaneStatus.getSeatQty() - 1);
+            airplaneRepository.save(airplaneStatus);
             ReservationApproved reservationApproved = new ReservationApproved(airplane);
             reservationApproved.publishAfterCommit();
         }

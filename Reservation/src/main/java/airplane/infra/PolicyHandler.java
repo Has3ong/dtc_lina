@@ -22,5 +22,27 @@ public class PolicyHandler {
 
     @StreamListener(KafkaProcessor.INPUT)
     public void whatever(@Payload String eventString) {}
+
+    @StreamListener(
+        value = KafkaProcessor.INPUT,
+        condition = "headers['type']=='ReservationApproved'"
+    )
+    public void ReservationApproved_ReservationUpdated(
+        @Payload Reservation reservation
+    ) {
+        reservationRepository.save(reservation);
+	}
+
+    @StreamListener(
+        value = KafkaProcessor.INPUT,
+        condition = "headers['type']=='ReservationRejected'"
+    )
+    public void ReservationRejected_ReservationUpdated(
+        @Payload Reservation reservation
+    ) {
+        reservationRepository.deleteByReservId(reservation.getReservId());
+        ReservationCanceled reservationCanceled = new ReservationCanceled(reservation);
+        reservationCanceled.publishAfterCommit();
+	}
 }
 //>>> Clean Arch / Inbound Adaptor
